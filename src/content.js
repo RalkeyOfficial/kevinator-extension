@@ -1,4 +1,10 @@
-const image = "https://raw.githubusercontent.com/RalkeyOfficial/kevinator-extension/main/src/images/IMG20220118164805.jpg"; 
+const image = [];
+
+fs.readdir('src/images', (err, files) => {
+    files.forEach(file => {
+        image.push(`https://raw.githubusercontent.com/RalkeyOfficial/kevinator-extension/main/src/images/${file}`);
+    })
+});
 
 setInterval(function() {
     let imageCollection = document.images;

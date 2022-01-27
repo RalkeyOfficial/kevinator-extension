@@ -1,18 +1,21 @@
-const image = [];
 
-fs.readdir('src/images', (err, files) => {
-    files.forEach(file => {
-        image.push(`https://raw.githubusercontent.com/RalkeyOfficial/kevinator-extension/main/src/images/${file}`);
-    })
-});
+const images = [
+    
+];
 
 setInterval(function() {
     let imageCollection = document.images;
 
     for(img in imageCollection) {
         if (imageCollection[img].src == "" || imageCollection[img].src == "#") continue;
-        if (imageCollection[img].src == image) continue;
+        if (images.includes(imageCollection[img].src) ) continue;
         
-        imageCollection[img].src = image;
+        imageCollection[img].src = chooseRandomImage();
     }
 }, 500);
+
+
+function chooseRandomImage() {
+    let random = Math.floor(Math.random() * images.length);
+    return images[random];
+}

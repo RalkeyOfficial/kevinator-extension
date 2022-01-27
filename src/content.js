@@ -6,6 +6,7 @@ setInterval(function() {
     for(img in imageCollection) {
         if (imageCollection[img].src == "" || imageCollection[img].src == "#") continue;
         if (imageCollection[img].src == image) continue;
+        
         imageCollection[img].src = image;
     }
 }, 500);

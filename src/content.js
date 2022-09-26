@@ -23,7 +23,7 @@ setInterval(function() {
     for(divElement in divImgCollection) {
         const url = $(divImgCollection[divElement]).css('background-image').slice(5, $(divImgCollection[divElement]).css('background-image').length - 2);
 
-        if (url == "" || url == "none") continue;
+        if (url == "" || url == "#") continue;
         if (images.includes(url ) ) continue;
 
         $(divImgCollection[divElement]).css('background-image', `url("${chooseRandomImage()}")`);
